@@ -147,15 +147,15 @@ export function useThreads(event: H3Event) {
     },
 
     hideAllPosts: async (reportId: string) => {
-      const { error: deletePostError } = await supabase
+      const { error: updatePostError } = await supabase
         .from("popular_posts")
         .update({
           is_visible: false,
         })
         .eq("report_id", reportId);
 
-      if (deletePostError) {
-        console.error(`deletePostError: ${deletePostError}`);
+      if (updatePostError) {
+        console.error(`updatePostError: ${updatePostError}`);
         throw new Error("Internal Server Error");
       }
     },
