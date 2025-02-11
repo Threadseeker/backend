@@ -45,10 +45,10 @@ export default defineEventHandler(async (event) => {
   const TaskManager = useTasks(event);
   const { PostManager, ReportManager } = useThreads(event);
 
-  const useHasReport = await ReportManager.getReport(report.id);
+  const userHasReport = await ReportManager.getReport(report.id);
 
   // if report already exists, hide posts
-  if (useHasReport) {
+  if (userHasReport) {
     await PostManager.hideAllPosts(report.id);
   }
 
