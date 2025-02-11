@@ -1,5 +1,3 @@
-import { isBrowser } from "@supabase/ssr";
-
 export default defineNitroConfig({
   srcDir: "server",
   experimental: {
