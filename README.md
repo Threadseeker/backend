@@ -87,7 +87,7 @@ You can access the API documentation at `http://localhost:3000/_docs/_swagger`. 
 
 You could disable the doc generation in production by removing `production` config in `openAPI` section of `nitro.config.ts`. **If enabled, remember to protect your API docs endpoints.**
 
-The real-world API documentation of Threadseeker is available at [docs.threadsseeker.com](https://docs.threadsseeker.com). We use Cloudflare Worker as a reverse proxy to protect the API docs without exposing the API host, and we also have the worker script open-sourced [here](https://github.com/Threadseeker/docs-proxy-worker).
+The real-world API documentation of Threadseeker is available at [doc.threadsseeker.com](https://doc.threadsseeker.com). We use Cloudflare Worker as a reverse proxy to protect the API docs without exposing the API host, and we also have the worker script open-sourced [here](https://github.com/Threadseeker/docs-proxy-worker).
 
 ## License
 
