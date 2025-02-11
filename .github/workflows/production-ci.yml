@@ -1,0 +1,31 @@
+# name: Production CI
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   production-ci:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       deployments: write
+#     name: Production CI
+#     environment: production
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+
+#       - name: Zip repository
+#         run: |
+#           zip -r repo.zip . -x '.git/*' -x '.github/*'
+
+#       - name: Deploy to Zeabur
+#         id: deploy
+#         run: |
+#           curl --request POST \
+#             --url https://api.zeabur.com/projects/${{ secrets.PROJECT_ID }}/services/${{ secrets.SERVICE_ID }}/deploy \
+#             --header "Authorization: Bearer ${{ secrets.ZEABUR_API_TOKEN }}" \
+#             --form "code=@repo.zip" \
+#             --form "environment=${{ secrets.ENVIRONMENT_ID }}"
