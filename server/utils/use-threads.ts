@@ -60,7 +60,8 @@ export function useThreads(event: H3Event) {
         like_count
         `
         )
-        .eq("report_id", reportId);
+        .eq("report_id", reportId)
+        .eq("is_visible", true);
 
       if (postsError) {
         console.error(postsError);
