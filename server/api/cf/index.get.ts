@@ -25,8 +25,9 @@ defineRouteMeta({
 export default defineEventHandler(async (event) => {
   try {
     const auth = getHeader(event, "Authorization");
+    const config = useRuntimeConfig(event);
 
-    if (auth !== "vXEc5dRul61bdeuqc2DpHp1s1BBd6E") {
+    if (auth !== config.INTERNAL_API_KEY) {
       setResponseStatus(event, 401);
       return {
         status: "failed",
