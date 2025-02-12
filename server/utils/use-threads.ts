@@ -177,19 +177,20 @@ export function useThreads(event: H3Event) {
     },
     getUserProfile: async (username: string): Promise<null | ThreadsUser> => {
       const config = useRuntimeConfig(event);
-      const response = await $fetch<ThreadsUserFunctionResponse>(config.gcf.usernameWorkerUrl,
+      const response = await $fetch<ThreadsUserFunctionResponse>(
+        config.gcf.usernameWorkerUrl,
         {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `${config.CLOUD_FUNCTION_SECRET}`
+            Authorization: `${config.CLOUD_FUNCTION_SECRET}`,
           },
           params: {
             username,
           },
         }
-      )
-      if(response.data && response.status === "ok") {
+      );
+      if (response.data && response.status === "ok") {
         return response.data;
       }
       return null;

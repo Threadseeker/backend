@@ -7,7 +7,7 @@ export default defineNitroConfig({
     CLOUD_FUNCTION_SECRET: process.env.CLOUD_FUNCTION_SECRET,
     PROXY_URL: process.env.PROXY_URL,
     INTERNAL_SECRET: process.env.INTERNAL_SECRET,
-    gcf:{
+    gcf: {
       queueWorkerUrl: process.env.CLOUD_FUNCTION_QUEUE_URL,
       usernameWorkerUrl: process.env.CLOUD_FUNCTION_USERNAME_URL,
     },
